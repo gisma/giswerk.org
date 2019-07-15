@@ -114,7 +114,7 @@ The dense point cloud can be calculated as soon the pictures are aligned. Even i
 ### Photoscan import/export
 
 
-
+![](images/workflow_image_6.png)
 
 
 
