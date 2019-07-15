@@ -42,3 +42,5 @@ ga_tracking: UA-2709176-10
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
+
+theme: jekyll-theme-minimal
