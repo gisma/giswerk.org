@@ -14,7 +14,7 @@ Agisoft's Photoscan is a great tool for deriving point clouds and all kind of su
 After loading the images into [Agisofts Photoscan](http://www.agisoft.com/) the aerial images are lining up along the flight track as you can see below.
 
 
-![alt](https://github.com/gisma/giswerk.org/master/rs/micrors/agisoft/workflow_image_2.png)
+![alt](https://github.com/gisma/giswerk.org/master/rs/micrors/agisoft/images/workflow_image_2.png)
 
 ### Alignment
 
