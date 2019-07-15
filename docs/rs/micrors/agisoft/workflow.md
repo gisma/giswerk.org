@@ -1,7 +1,10 @@
 ---
-layout: liquibase
-lang: en
+layout: default
+title: Customization
+nav_order: 4
 ---
+
+
 #   Agisoft Photoscan basic workflow
 
 Even if both criteria not open source not free software, are missing one have to admit that 
