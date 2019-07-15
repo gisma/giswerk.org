@@ -5,7 +5,7 @@ lang: en
 #   Agisoft Photoscan basic workflow
 
 Even if both criteria not open source not free software, are missing one have to admit that 
-Agisoft's Photoscan is a great tool for deriving point clouds and all kind of surface models from plain RGB imagery. It comes along with an incredible straightforward GUI and in Question of hardware requests and cost eff ency it is well balanced. For a deeper insight one should know how to deal with a lot o settings. We will cover this on a more specialized article [Photoscan and UAV Imagery](rs/micrors/agisoft/photoscanunderthehood). Let's start to follow the white rabbit.
+Agisoft's Photoscan is a great tool for deriving point clouds and all kind of surface models from plain RGB imagery. It comes along with an incredible straightforward GUI and in Question of hardware requests and cost eff ency it is well balanced. For a deeper insight one should know how to deal with a lot o settings. We will cover this on a more specialized article [Photoscan and UAV Imagery](rs/micrors/agisoft/images/photoscanunderthehood). Let's start to follow the white rabbit.
 
 
 
@@ -14,7 +14,7 @@ Agisoft's Photoscan is a great tool for deriving point clouds and all kind of su
 After loading the images into [Agisofts Photoscan](http://www.agisoft.com/) the aerial images are lining up along the flight track as you can see below.
 
 
-![alt](https://github.com/gisma/giswerk.org/master/rs/micrors/agisoft/workflow_image_2.png)
+![alt](/rs/micrors/images/workflow_image_2.png)
 
 ### Alignment
 
@@ -25,7 +25,7 @@ After loading the images into [Agisofts Photoscan](http://www.agisoft.com/) the 
 
 The **Align Images** process is somehow exploitative. For a quick start it is a good practice to use the following settings:
 
-![](workflow_image_3.png)
+![]⁽rs/micrors/agisoft/images/workflow_image_3.png)
 
 It will give you an good estimate how the general alignment process performs. 
 
