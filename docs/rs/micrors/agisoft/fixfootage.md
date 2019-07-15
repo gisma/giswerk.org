@@ -1,6 +1,7 @@
 ---
-layout: liquibase
-lang: en
+layout: default
+title: Customization
+nav_order: 4
 ---
 # Postprocessing UAV Footage
 

@@ -1,6 +1,7 @@
 ---
-layout: liquibase
-lang: en
+layout: default
+title: Customization
+nav_order: 4
 ---
 #   Optimize Alignment: How to align and merge Chunks
 
