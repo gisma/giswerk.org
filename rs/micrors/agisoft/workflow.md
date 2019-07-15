@@ -25,7 +25,7 @@ After loading the images into [Agisofts Photoscan](http://www.agisoft.com/) the 
 
 The **Align Images** process is somehow exploitative. For a quick start it is a good practice to use the following settings:
 
-![](workflow_image_3.png)
+![]⁽rs/micrors/agisoft/images/workflow_image_3.png)
 
 It will give you an good estimate how the general alignment process performs. 
 
