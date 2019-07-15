@@ -5,7 +5,7 @@ lang: en
 #   Agisoft Photoscan basic workflow
 
 Even if both criteria not open source not free software, are missing one have to admit that 
-Agisoft's Photoscan is a great tool for deriving point clouds and all kind of surface models from plain RGB imagery. It comes along with an incredible straightforward GUI and in Question of hardware requests and cost eff ency it is well balanced. For a deeper insight one should know how to deal with a lot o settings. We will cover this on a more specialized article [Photoscan and UAV Imagery](rs/micrors/agisoft/photoscanunderthehood). Let's start to follow the white rabbit.
+Agisoft's Photoscan is a great tool for deriving point clouds and all kind of surface models from plain RGB imagery. It comes along with an incredible straightforward GUI and in Question of hardware requests and cost eff ency it is well balanced. For a deeper insight one should know how to deal with a lot o settings. We will cover this on a more specialized article [Photoscan and UAV Imagery](rs/micrors/agisoft/images/photoscanunderthehood). Let's start to follow the white rabbit.
 
 
 
