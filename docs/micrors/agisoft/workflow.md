@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Agisoft Photoscan basic workflow
-parent: agisoft
-nav_order: 3
+parent: Micro Remote Sensing
 ---
 
 

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Setup Nvidia GPUs for Agisoft
-parent: agisoft
-nav_order: 2
+parent: Micro Remote Sensing
+nav_order: 1
 ---
 
 # Setup Nvidia GPUs for Agisoft
