@@ -1,0 +1,41 @@
+<h1 id="setup-photoscan-on-a-cluster">Setup Photoscan on a cluster</h1>
+
+<p>The concept is roughly outlined in chapter 8 of the Agisoft Photoscan <a href="http://www.agisoft.com/pdf/photoscan-pro_1_3_en.pdf"> manual</a>. Nevertheless there atre some pitfalls and not so well documented features.</p>
+
+<p>First you need to export a common net ressource. You may follow the [[https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-16-04
+ | digitialocean]] example:
+ | ————————</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::bash
+# on the sever side (exporting machine)
+sudo apt-get install nfs-kernel-server
+sudo mkdir /var/nfs/general -p
+sudo chown nobody:nogroup /var/nfs/general
+sudo nano /etc/exports
+/var/nfs/general    xxx.xxx.xxx.xxx(rw,sync,no_subtree_check)
+sudo systemctl restart nfs-kernel-server
+
+# on the clients side
+sudo apt-get install nfs-common
+sudo mkdir /var/nfs/agi -p
+sudo mount xxx.xxx.xxx.xxx:/var/nfs/general /var/nfs/agi
+</code></pre></div></div>
+
+<p>Now you have to start a head node as photoscan server</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::bash
+
+nohup ./photoscan.sh --server xxx.xxx.xxx.xxx --dispatch xxx.xxx.xxx.xxx  --root /var/nfs/agi
+</code></pre></div></div>
+
+<p>Next you may assign node(s)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::bash
+
+nohup ./photoscan.sh --node --dispatch xxx.xxx.xxx.xxx  --opencl_gpu_mask 1  --root /var/nfs/agi
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">&lt;note&gt;</code>
+Be aware, that the monitor and the network installation of Agisoft Photoscan <strong>must</strong> have the same version.
+The installation on the computer can have a newer version.
+<code class="highlighter-rouge">&lt;/note&gt;</code></p>

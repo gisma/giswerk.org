@@ -1,0 +1,125 @@
+<h1 id="postprocessing-uav-footage">Postprocessing UAV Footage</h1>
+
+<p>This documents provides a basic workflow of the georeferencing process of Solo/Pixhawk flight data as well as the optimized workflow for deriving high quality point clouds 3D models and orthoimages. In detail it covers the topics:</p>
+
+<ol>
+  <li>data acquisition constraints</li>
+  <li>geotagging of the images</li>
+  <li>high quality image alignment</li>
+  <li>high quality point cloud generation</li>
+  <li>high quality orthoimages generation</li>
+  <li>high quality dense point clouds</li>
+  <li>importing and exporting data from photoscan</li>
+  <li>Agisoft Photoscan scripting</li>
+  <li>interaction with the uavRst package</li>
+</ol>
+
+<p><code class="highlighter-rouge">&lt;note tip&gt;</code>This is a preliminary draft. Please note that significant changes can still be expected<code class="highlighter-rouge">&lt;/note&gt;</code></p>
+
+<h2 id="constraints-of-data-acquisition">Constraints of data acquisition</h2>
+
+<p>The base for good micro-remote sensing products are the images takes by the drone. They will pass through a post processing workflow where the original picture quality determines the quality in every further step. It is pretty simple and successful if one keep in mind some very basic constraints during data acquisition.</p>
+
+<p>Actually you should take care of two requirements:</p>
+
+<ol>
+  <li>sufficient overlap, provide photos where at least 70% of the photo is on focus while avoiding scale leaps (surface following flight paths). Consider on which footprint the overlap is calculated. If you have different structure layers in different distances to the camera, the overlap differs for every of this layers as they have all their own footprint dimensions.</li>
+  <li>diffuse but bright light, best is at noon with kind of high thin cirrus clouds scattering the light perfectly and reduce shadows….</li>
+</ol>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>The following workflow requires some tools: You need the<a href="https///github.com/mapillary/mapillary_tools">mapillary_tools</a>which is a very useful bunch of python scripts dealing with image placement on web maps. To run them you also need to install ‘‘gpxpy’’, ‘‘pillow’’, ‘‘exifread’’,’‘pyexiv2’’ . If running windows please install first a <a href="https///sites.google.com/site/pydatalog/python/pip-for-windows">pip installer</a> derivative, running Linux you can install pip with ‘‘sudo apt-get install pip’’. Then you may install the dependencies like following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::bash
+pip install git+[[https://github.com/mapillary/mapillary_tools.git|https://github.com/mapillary/mapillary_tools.git]]
+
+pip install gpxpy
+
+pip install exifread
+
+pip install Pillow
+
+sudo apt-get install python-pyexiv2 (Linux)
+</code></pre></div></div>
+
+<p>For Windows you will find at launchpad <a href="http://launchpad.net/pyexiv2/0.3.x/0.3.2/+download/pyexiv2-0.3.2-py27-amd64.exe"> pyexif2</a>.</p>
+
+<p>Next (if not already installed) you need to install the <a href="https///www.gpsbabel.org/">gpsbabel</a> binaries.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::bash
+sudo apt-get install gpsbabel\\ 
+</code></pre></div></div>
+
+<p>For the visualization of the gpx data you may use <a href="http://www.qgis.org/">QGIS</a> or <a href="https///cran.r-project.org/package=mapview">mapview</a> and <a href="https///www.rdocumentation.org/packages/raster/versions/2.5-8/topics/plotRGB">plotRGB</a> in R.</p>
+
+<h2 id="adding-geotags-to-the-images">Adding geotags to the images</h2>
+
+<p>Almost no standalone camera has a <em>GPS *or an *aGPS</em> onboard. As a result no image will have a spatial reference at all. Georeferenced images can be aligned better and faster and, as a side effect, one will have a fairly good georeference (~1-5 meters). So even if this task is a bit cumbersome it will help a lot.</p>
+
+<p>The most prominent way to apply a spatial position is to add  geotags to the images. This needs a semi-automated post processing. The best software doing so is <a href="http://www.geosetter.de/en/">geosetter</a>, which is unfortunately not running very stable under Linux and OSX (besides some other shortcomings).</p>
+
+<p>Actually, while adding geotags you have to deal with three  effects:</p>
+
+<ol>
+  <li>time shift between logger and camera time</li>
+  <li>automatic timezone adaption of the data</li>
+  <li>identification of a start and stop image within the time series</li>
+</ol>
+
+<p>For our needs we want to align the images along the flight track within a accuracy of 2-5 seconds (according to lapse rate). It seems to be kind of senseless to automate this process due to the fact that you always have to start and stop the cameras manually and you always will take pictures on the ascending, descending going to and coming back from the core task.</p>
+
+<p>| Note: You have to find out when the timestamp of the image is created. Shooting the picture or  saving the file (what might be a few seconds later, e.g. for Mapir-cameras the timestamp is created in that moment the file is saved). | 
+ | ————————————————————————————————————————————————————————————————————————————– |</p>
+
+<h2 id="preparation-of-the-data">Preparation of the data</h2>
+
+<p>If not done you need to organize some basic things. It is more than helpful to separate each partial flight an the corresponding gpx file in a subdirectory. Very straightforward it may look like below.</p>
+
+<ol>
+  <li>separate all image files according to the corresponding flight (log file)</li>
+  <li>copy the GPX-log file into the same directory</li>
+</ol>
+
+<h3 id="the-basic-concept">The basic concept</h3>
+
+<p>You have to find the start and stop image of the partial task. Load the task in QGIS open the Bing aerial map and the first and last image. In most cases you can easily identify the rough position of the camera. It is by no means necessary to get an extremely exact result. You just need to to generate a correct sequence according to  the gpx track points as described below.</p>
+
+<h3 id="the-workflow">The workflow</h3>
+
+<p>Open a terminal and navigate to the image/gpx folder.</p>
+
+<h3 id="write-fake-exif-date-and-time-tag">Write fake exif date and time tag</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::bash
+python~/dev/R/uavRst/inst/python/add_fix_dates.py.'2017-05-16 16:44:12'**2**
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">&lt;note important&gt;</code>Please note:<br />
+     - the location of the scripts is arbitrary<br />
+     - you start with the best fitting track point according to your first image<br />
+     - the <strong>dot</strong> is obligatory to point to the actual directory <br />
+     - the 2 is the time increment of the cameras lapse rate in seconds<br />
+     - take the time of the GPX-time-tag (red 16)real GPS time is 14
+<code class="highlighter-rouge">&lt;/note&gt;</code></p>
+
+<h3 id="cut-the-gpx-log-file">Cut the gpx log file</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::bash
+gpsbabel-t -i gpx -f current_solo.gpxtrack, start=20170516144408,stop=20170516144930-o gpx-F clean_task.gpx
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">&lt;note important&gt;</code>
+Please note:</p>
+<ol>
+  <li>gpsbabel may re-interpret the time tag to GPS time so usually you have to set the time shifted by the time zone and summertime</li>
+  <li>just add for convenience two lapse rate steps in the beginning and end Write the derived geotags to each image file.
+<code class="highlighter-rouge">&lt;/note&gt;</code></li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::python
+python ~/dev/R/uavRst/inst/python/geotag_from_gpx.py.clean_task.gpx
+</code></pre></div></div>
+
+<p>You are done with the preparation now. Time to start Photoscan.</p>
+
