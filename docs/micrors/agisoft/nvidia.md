@@ -4,6 +4,7 @@ title: Setup Nvidia GPUs for Agisoft
 parent: agisoft
 nav_order: 2
 ---
+
 # Setup Nvidia GPUs for Agisoft
 
 After a long run finally here is one successful solution for setting up consumer GPUs from Nvidia for a use with Agisoft. A lot of it is compiled on [abhay's](http://abhay.harpale.net/blog/linux/nvidia-gtx-1080-installation-on-ubuntu-16-04-lts/) blog.

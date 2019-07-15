@@ -1,18 +1,11 @@
 ---
 layout: default
 title: Micro Remote Sensing
-nav_order: 1
+nav_order: 3
 has_children: true
 permalink: /docs/micrors/agisoft
 ---
-# Code
-{: .no_toc }
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 # Agisoft Photoscan
 
