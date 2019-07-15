@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Agisoft Photoscan/Metashape
+title: Micro Remote Sensing
 nav_order: 2
-parent: micrors
+has_children: true
+permalink: /docs/micrors/agisoft
 ---
 # Code
 {: .no_toc }

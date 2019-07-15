@@ -2,7 +2,6 @@
 layout: default
 title: Setup Nvidia GPUs for Agisoft
 parent: agisoft
-grand_parent: micrors
 ---
 # Setup Nvidia GPUs for Agisoft
 
