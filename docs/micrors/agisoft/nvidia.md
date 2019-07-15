@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Setup Nvidia GPUs for Agisoft
-nav_order: 1
-parent: intro
+nav_order: 2
+parent: agisoft
 ---
 # Setup Nvidia GPUs for Agisoft
 
