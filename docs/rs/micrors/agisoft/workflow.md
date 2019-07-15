@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Customization
-nav_order: 4
+title: Agisoft Photoscan basic workflow
+nav_order: 2
+parent: intro
 ---
 
 
