@@ -3,7 +3,7 @@ layout: default
 title: Micro Remote Sensing
 nav_order: 2
 has_children: true
-permalink: /docs/micrors
+permalink: /docs/micrors/agisoft
 
 ---
 # Agisoft Photoscan

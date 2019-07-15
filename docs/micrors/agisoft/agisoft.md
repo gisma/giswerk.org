@@ -3,7 +3,6 @@ layout: default
 title: Agisoft Photoscan/Metashape
 nav_order: 2
 parent: micrors
-
 ---
 # Code
 {: .no_toc }
