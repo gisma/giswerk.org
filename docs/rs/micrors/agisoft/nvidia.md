@@ -2,6 +2,7 @@
 layout: default
 title: Setup Nvidia GPUs for Agisoft
 nav_order: 5
+has_toc: false
 parent: intro
 ---
 # Setup Nvidia GPUs for Agisoft
