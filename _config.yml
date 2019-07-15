@@ -43,4 +43,3 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
 
-theme: pmarsceill/just-the-docs
