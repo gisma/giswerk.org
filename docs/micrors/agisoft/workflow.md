@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Agisoft Photoscan basic workflow
-nav_order: 2
+nav_order: 1
 parent: agisoft
+grand_parent: micrors
 ---
 
 

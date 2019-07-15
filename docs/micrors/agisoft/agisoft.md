@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Agisoft Photoscan/Metashape
-nav_order: 3
-has_children: true
-permalink: /docs/micrors/agisoft
+nav_order: 2
+parent: micrors
 ---
 # Agisoft Photoscan
 
