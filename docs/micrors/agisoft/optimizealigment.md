@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  Optimize Alignment: How to align and merge Chunks
+title:  How to align and merge Chunks
 parent: Micro Remote Sensing
 ---
 #   Optimize Alignment: How to align and merge Chunks
