@@ -2,7 +2,6 @@
 layout: default
 title:  Postprocessing UAV Footage
 parent: Micro Remote Sensing
-nav_order: 1
 ---
 # Postprocessing UAV Footage
 

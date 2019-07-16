@@ -2,7 +2,7 @@
 layout: default
 title: Setup Photoscan on a cluster
 parent: Micro Remote Sensing
-nav_order: 1
+
 ---
 # Setup Photoscan on a cluster
 
