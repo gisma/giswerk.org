@@ -1,9 +1,7 @@
 ---
 layout: default
 title: Low Budget Sensors
-nav_order: 3
-has_children: true
-permalink: /docs/micrors/sensors
+parent: Micro Remote Sensing
 ---
 # Low Budget Sensors
 

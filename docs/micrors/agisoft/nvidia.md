@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Setup Nvidia GPUs for Agisoft
-parent: Micro Remote Sensing
-
+parent: Agisoft Photoscan
+grand_parent: Micro Remote Sensing
 ---
 
 # Setup Nvidia GPUs for Agisoft

@@ -1,7 +1,8 @@
 ---
 layout: default
 title: MAPIR Survey 2
-parent: Low Budget Sensors
+parent:  Low Budget Sensors
+grand_parent: Micro Remote Sensing
 
 ---
 # MAPIR Survey 2
@@ -10,7 +11,7 @@ parent: Low Budget Sensors
 
 ## Basic setup instructions
 
-Basically all of the cams can be set up in a similar way. The camera has three buttons. power ''P'', menu ''M'' (WiFi) and the trigger ''T'' button.{{ :rs:micrors:uavrs:sensors:mapir2_1.png?direct&400 |}} All settings can be reached by this three buttons.
+Basically all of the cams can be set up in a similar way. The camera has three buttons. power ''P'', menu ''M'' (WiFi) and the trigger ''T'' button.![](media/mapir2_1.png?direct) All settings can be reached by this three buttons.
 
 The default settings  as provided by Peau Productions are fairly OK if you fly under good illumination  conditions. For autonomous flights You need to set the time lapse rate of the camera:  
 
@@ -26,12 +27,12 @@ Please do as follow:
 
 * Power on the camera ''P'', then press again ''P'' four times until you see the system settings screen. 
 
-{{ :rs:micrors:uavrs:sensors:mapir_settings_menu.png?direct&200 |}}
+![](media/mapir_settings_menu.png)
 
 
 Press the trigger button ''T'' then press 8 times ''P'' until you activate the time and date settings.
  
-{{ :rs:micrors:uavrs:sensors:mapir_time_menu.png?direct&200 |}}
+![](media/mapir_time_menu.png?direct)
 
 
 Press ''T'' again for navigating to the appropriate date and time parameter. Usually you need to fix the seconds only. Set the time 10 seconds or so to the future of the current GPS time. You can change the settings with the ''P'' button. When the GPS time is reaching the preset camera time press **2 times** the ''M'' button. This is the most exact (about 1 sec)  manually way to fix the time to GPS. You have to to so with all cameras at least once a week.  

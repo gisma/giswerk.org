@@ -1,7 +1,8 @@
 ---
 layout: default
 title:  Postprocessing UAV Footage
-parent: Micro Remote Sensing
+parent: Agisoft Photoscan
+grand_parent: Micro Remote Sensing
 ---
 # Postprocessing UAV Footage
 

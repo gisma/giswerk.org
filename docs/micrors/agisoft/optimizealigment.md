@@ -1,7 +1,8 @@
 ---
 layout: default
 title:  How to align and merge Chunks
-parent: Micro Remote Sensing
+parent: Agisoft Photoscan
+grand_parent: Micro Remote Sensing
 ---
 #   Optimize Alignment: How to align and merge Chunks
 

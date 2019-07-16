@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Setup Photoscan on a cluster
-parent: Micro Remote Sensing
-
+parent: Agisoft Photoscan
+grand_parent: Micro Remote Sensing
 ---
 # Setup Photoscan on a cluster
 
