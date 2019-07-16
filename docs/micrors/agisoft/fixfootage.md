@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Setup Nvidia GPUs for Agisoft
+title:  Postprocessing UAV Footage
 parent: Micro Remote Sensing
 nav_order: 1
 ---

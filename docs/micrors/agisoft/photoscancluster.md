@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Setup Nvidia GPUs for Agisoft
+title: Setup Photoscan on a cluster
 parent: Micro Remote Sensing
 nav_order: 1
 ---

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Setup Nvidia GPUs for Agisoft
+title: Optimize Alignment: How to align and merge Chunks
 parent: Micro Remote Sensing
 nav_order: 1
 ---
