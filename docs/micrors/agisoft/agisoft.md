@@ -2,6 +2,8 @@
 layout: default
 title: Agisoft Photoscan
 parent: Micro Remote Sensing
+nav_order: 2
+has_children: true
 
 ---
 

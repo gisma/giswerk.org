@@ -2,6 +2,8 @@
 layout: default
 title: Low Budget Sensors
 parent: Micro Remote Sensing
+nav_order: 2
+has_children: true
 ---
 # Low Budget Sensors
 
