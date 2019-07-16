@@ -8,7 +8,7 @@ parent: Micro Remote Sensing
 #   Agisoft Photoscan basic workflow
 
 Even if both criteria not open source not free software, are missing one have to admit that 
-Agisoft's Photoscan is a great tool for deriving point clouds and all kind of surface models from plain RGB imagery. It comes along with an incredible straightforward GUI and in Question of hardware requests and cost eff ency it is well balanced. For a deeper insight one should know how to deal with a lot o settings. We will cover this on a more specialized article [Photoscan and UAV Imagery](rs/micrors/agisoft/images/photoscanunderthehood). Let's start to follow the white rabbit.
+Agisoft's Photoscan is a great tool for deriving point clouds and all kind of surface models from plain RGB imagery. It comes along with an incredible straightforward GUI and in Question of hardware requests and cost eff ency it is well balanced. For a deeper insight one should know how to deal with a lot o settings. We will cover this on a more specialized article [Photoscan and UAV Imagery](rs/micrors/agisoft/media/photoscanunderthehood). Let's start to follow the white rabbit.
 
 
 
@@ -17,7 +17,7 @@ Agisoft's Photoscan is a great tool for deriving point clouds and all kind of su
 After loading the images into [Agisofts Photoscan](http://www.agisoft.com/) the aerial images are lining up along the flight track as you can see below.
 
 
-![alt](images/workflow_image_2.png)
+![alt](media/workflow_image_2.png)
 
 ### Alignment
 
@@ -28,7 +28,7 @@ After loading the images into [Agisofts Photoscan](http://www.agisoft.com/) the 
 
 The **Align Images** process is somehow exploitative. For a quick start it is a good practice to use the following settings:
 
-![](images/workflow_image_3.png)
+![](media/workflow_image_3.png)
 
 It will give you an good estimate how the general alignment process performs. 
 
@@ -38,7 +38,7 @@ It will give you an good estimate how the general alignment process performs.
 
 However there are a lot of different requirements depending on sensor, light and surface characteristics. For high quality images there is obviously [no](http://www.agisoft.com/forum/index.php?topic=3559.0)[ significant](http://www.agisoft.com/forum/index.php?topic=3559.0) quality improvement if increasing the number of keypoints behind 240000. You may calculate as a rule of thumb (same post) the maximum number of keypoint according to *megapixels x 6400*. 
 
-![](images/workflow_image_4.png)
+![](media/workflow_image_4.png)
 
 For the Mapir or DJI this will results in roughly 77000 keypoints.  Nevertheless setting the params to zero will be interpreted as maximum which seems to be reliable if one is filtering the point clouds and 3D models in a second step.  So a reasonable highest quality approach may look like:
 
@@ -82,7 +82,7 @@ For more details have a look at e.g.  [dinosaurpaleo](https///dinosaurpalaeo.wor
 
 Now you may use the derived sparse point cloud to build a 3D model. the process is straightforward. For an maximum number of faces in the mesh choose the following settings:
 
-![](images/workflow_image_5.png)
+![](media/workflow_image_5.png)
 
 ### Generate Orthophoto
 
@@ -99,7 +99,7 @@ Using a mesh (3D model) will give in most cases better results for the orthoimag
 
 So the recommended settings are:
 
-![](images/workflow_image_6.png)
+![](media/workflow_image_6.png)
 
 Et voila - Finally you derive an orthoimage of fairly high quality 
 
@@ -117,7 +117,7 @@ The dense point cloud can be calculated as soon the pictures are aligned. Even i
 ### Photoscan import/export
 
 
-![](images/workflow_image_6.png)
+![](media/workflow_image_6.png)
 
 
 

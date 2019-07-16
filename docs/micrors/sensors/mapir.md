@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Customization
-nav_order: 4
+title: MAPIR Survey 2
+parent: Low Budget Sensors
+
 ---
 # MAPIR Survey 2
 
