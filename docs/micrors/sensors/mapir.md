@@ -3,7 +3,7 @@ layout: default
 title: MAPIR Survey 2
 parent:  Low Budget Sensors
 grand_parent: Micro Remote Sensing
-
+nav_order: 1
 ---
 # MAPIR Survey 2
 
