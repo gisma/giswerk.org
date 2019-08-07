@@ -3,7 +3,7 @@ title:              giswerk.org
 bio:                'all gis related stuff'
 description:        "all gis related stuff and more"
 locale:             en_US
-baseurl: "giswerk.org" # the subpath of your site, e.g. /blog
+baseurl: "/giswerk.org" # the subpath of your site, e.g. /blog
 url: "http://gisma.github.io" # the base hostname & protocol for your site
 
 # Comments
