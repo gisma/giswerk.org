@@ -1,9 +1,10 @@
 ---
-layout: default
+layout: post
 title: Agisoft Photoscan basic workflow
-parent: Agisoft Photoscan
-grand_parent: Micro Remote Sensing
-nav_order: 1
+title:  "Welcome to Massively: The Jekyll Theme!"
+date:   2018-10-31
+excerpt: "maybe basic"
+image: "/images/pic02.jpg"
 ---
 
 
