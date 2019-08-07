@@ -1,45 +1,68 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole site, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing these this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# Site
+title:              giswerk.org
+bio:                'all gis related stuff'
+description:        "all gis related stuff and more"
+locale:             en_US
+baseurl: "giswerk.org" # the subpath of your site, e.g. /blog
+url: "http://gisma.github.io" # the base hostname & protocol for your site
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Giswerk
-description: Home of Giswerk
-baseurl: "/giswerk.org" # the subpath of your site, e.g. /blog
-url: "https://gisma.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+# Comments
+disqus_shortname:   default
 
-permalink: pretty
-exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"]
+# Social
+analytics-id:       "default"
+twitter:            default
+facebook:           default
+instagram:          default
+github:             default
 
-# Enable or disable the site search
-search_enabled: true
+# personal
+location:           Marburg, Germany
+phone:              0049-64212824296
+email:              creuden@gmail.com # change this to your email to receive free emails for your contact submissions via Slapform.com
 
-# Aux links for the upper right navigation
-aux_links:
-  "Find me on GitHub":
-    - "//github.com/gisma"
+# Other
+background_image:   /images/bg.jpg
+# Tip: The color palette and other styles can be configured in /_sass/lib/_vars.scss
+slapform_thankyou_page: /thank-you
 
-# Color scheme currently only supports "dark" or nil (default)
-color_scheme: nil
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    permalink: "/blog/:title/"
+    layout: post
+    author:
 
-remote_theme: pmarsceill/just-the-docs
+# Jekyll
+permalink:          /blog/:title/
+markdown:           kramdown
+highlighter:        rouge
+kramdown:
+  auto_ids:         true
+  footnote_nr:      1
+  entity_output:    as_char
+  toc_levels:       1..6
+  enable_coderay:   false
+mathjax:            true
+sass:
+  sass_dir:         _sass
+  style:            compressed
 
-
-# Google Analytics Tracking (optional)
-# e.g, UA-1234567-89
-ga_tracking: UA-2709176-10
-
-plugins:
-  - jekyll-seo-tag
+# Gems
+gems:
+  - jekyll-mentions
+  - jekyll-sitemap
   - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
 
+paginate: 6
+paginate_path: "/blog/page:num/"
+
+jekyll-mentions:
+    base_url: https://github.com
+
+# Exclude list
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]
