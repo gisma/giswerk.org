@@ -4,7 +4,7 @@ bio:                'all gis related stuff'
 description:        "all gis related stuff and more"
 locale:             en_US
 baseurl: "/giswerk.org" # the subpath of your site, e.g. /blog
-url: "https://gisma.github.io" # the base hostname & protocol for your site
+url: "gisma.github.io" # the base hostname & protocol for your site
 
 # Comments
 disqus_shortname:   microremotesensing
@@ -17,8 +17,8 @@ instagram:          default
 github:             default
 
 # personal
-location:           Marburg, Germany
-phone:              0049-64212824296
+location:           Germany
+phone:              0049
 email:              creuden@gmail.com # change this to your email to receive free emails for your contact submissions via Slapform.com
 
 # Other
