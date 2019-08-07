@@ -48,7 +48,7 @@
               
               var disqus_config = function () {
                   this.page.url = '{{ absolute_url }}{{ page.url }}';  /*Replace PAGE_URL with your page's canonical URL variable*/
-                  this.page.identifier = '{{ document.title }}'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
+                  this.page.identifier = '{{ page.url }}'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
               };
 
               (function() {  /* dont endit below this line */
@@ -62,7 +62,6 @@
           </script>
           <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">coFmments powered by Disqus.</a></noscript>
         </div><!-- /.comments-wrapper -->
-
 
 					<!-- Footer -->
 						<footer>
