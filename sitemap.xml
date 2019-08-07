@@ -11,7 +11,7 @@ layout: null
       {% else %}
         <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
       {% endif %}
-      <changefreq>daily</changefreq>
+      <changefreq>weekly</changefreq>
       <priority>0.7</priority>
     </url>
   {% endfor %}
@@ -21,7 +21,7 @@ layout: null
       {% if page.sitemap.lastmod == null %} <lastmod>2017-11-10T00:20:35+00:00</lastmod>
       {% else %} <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
       {% endif %}
-      {% if page.sitemap.changefreq == null %} <changefreq>daily</changefreq>
+      {% if page.sitemap.changefreq == null %} <changefreq>weekly</changefreq>
       {% else %} <changefreq>{{ page.sitemap.changefreq }}</changefreq>
       {% endif %}
       {% if page.sitemap.priority == null %} <priority>0.5</priority>
