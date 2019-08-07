@@ -5,17 +5,15 @@ description:        "all gis related stuff and more"
 locale:             en_US
 baseurl: "/giswerk.org" # the subpath of your site, e.g. /blog
 url: "https://gisma.github.io" # the base hostname & protocol for your site
-
 # Comments
-disqus_shortname:   microremotesensing
-
+disqus:
+  shortname:   microremotesensing
 # Social
 analytics-id:       "default"
-twitter:            default
+twitter:            gisma
 facebook:           default
 instagram:          default
-github:             default
-
+github:             gisma
 # personal
 location:           Germany
 phone:              0049
