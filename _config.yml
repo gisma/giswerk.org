@@ -7,7 +7,7 @@ baseurl: "/giswerk.org" # the subpath of your site, e.g. /blog
 url: "https://gisma.github.io" # the base hostname & protocol for your site
 
 # Comments
-disqus_shortname:   default
+disqus_shortname:   "microremotesensing"
 
 # Social
 analytics-id:       "default"
